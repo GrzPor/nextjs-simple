@@ -11,7 +11,7 @@ interface Tour {
 const URL = 'https://www.course-api.com/react-tours-project';
 
 const fetchTours = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  await new Promise(resolve => setTimeout(resolve, 3000));
   const res = await fetch(URL);
   const tours: Tour[] = await res.json();
   return tours;
@@ -24,7 +24,7 @@ const ToursPage = async () => {
     <section>
       <h1 className="text-3xl mb-4">Tours Page</h1>
       <div className="grid md:grid-cols-2 gap-8">
-        {tours.map((tour) => (
+        {tours.map(tour => (
           <div key={tour.id}>
             <Link href={`/tours/${tour.id}`} className="text-blue-500">
               {tour.name}

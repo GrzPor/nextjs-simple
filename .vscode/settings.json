@@ -4,4 +4,4 @@
   "prettier.requireConfig": true,
   "prettier.useEditorConfig": false,
   "prettier.configPath": ".prettierrc"
-} 
+}
