@@ -1,16 +1,28 @@
 'use client';
+import { useFormState, useFormStatus } from 'react-dom';
 
 import { createUser } from '@/utils/actions';
 
-const Form = () => {
+const SubmitButton = () => {
+  const { pending } = useFormStatus();
+
   return (
-    <form action={createUser} className={formStyle}>
+    <button className={buttonStyle} type="submit" disabled={pending}>
+      {pending ? 'Submitting...' : 'Submit'}
+    </button>
+  );
+};
+
+const Form = () => {
+  const [message, formAction] = useFormState(createUser, null);
+
+  return (
+    <form action={formAction} className={formStyle}>
+      {message && <p className="text-green-500">{message}</p>}
       <h2 className="text-2xl capitalize mb-4">create user</h2>
       <input className={inputStyle} type="text" name="firstName" defaultValue="peter" required />
       <input className={inputStyle} type="text" name="lastName" defaultValue="smith" required />
-      <button className={buttonStyle} type="submit">
-        Submit
-      </button>
+      <SubmitButton />
     </form>
   );
 };
