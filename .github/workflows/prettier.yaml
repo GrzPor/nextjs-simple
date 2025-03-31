@@ -1,0 +1,27 @@
+name: Prettier Check
+
+on:
+  pull_request:
+    branches: ['master']
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v4
+
+      - name: Setup node 🏗
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21
+
+      - name: Install dependencies 👨🏻‍💻
+        run: yarn
+
+      - name: Build packages 🏘️
+        run: yarn build
+
+      - name: Run prettier 👀
+        run: yarn prettier --check .
