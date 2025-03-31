@@ -1,0 +1,16 @@
+pages:
+  - app/**/*
+
+components:
+  - components/**/*
+
+utils:
+  - utils/**/*
+
+config:
+  - 'next.config.js'
+  - 'tsconfig.json'
+  - 'next-env.d.ts'
+
+dependencies:
+  - '**/yarn.lock'
