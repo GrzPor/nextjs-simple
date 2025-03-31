@@ -1,19 +1,16 @@
-Pages:
-  - changed-files:
-      - any-glob-to-any-file: app/**/*
+pages:
+  - app/**/*
 
-Components:
-  - changed-files:
-      - any-glob-to-any-file: components/**/*
+components:
+  - components/**/*
 
-Utils:
-  - changed-files:
-      - any-glob-to-any-file: utils/**/*
+utils:
+  - utils/**/*
 
-Config:
-  - changed-files:
-      - any-glob-to-any-file: ['next.config.js', 'tsconfig.json', 'next-env.d.ts']
+config:
+  - 'next.config.js'
+  - 'tsconfig.json'
+  - 'next-env.d.ts'
 
-Dependencies:
-  - changed-files:
-      - any-glob-to-any-file: ['**/yarn.lock']
+dependencies:
+  - '**/yarn.lock'
